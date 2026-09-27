@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>atheltic_aesthetix — gear we actually wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#F2F1EC;
+    --ink-dim:#B7BAC2;
+    --bg:#12161B;
+    --panel:#1A2028;
+    --panel-2:#20272F;
+    --line:#333B45;
+    --accent:#FF5A2B;
+    --accent-ink:#1A0C05;
+    --radius:2px;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --ink:#171A1E;
+      --ink-dim:#565D66;
+      --bg:#EFEEE9;
+      --panel:#FFFFFF;
+      --panel-2:#F5F4EF;
+      --line:#D8D6CE;
+    }
+  }
+  :root[data-theme="light"]{
+    --ink:#171A1E; --ink-dim:#565D66; --bg:#EFEEE9; --panel:#FFFFFF; --panel-2:#F5F4EF; --line:#D8D6CE;
+  }
+  :root[data-theme="dark"]{
+    --ink:#F2F1EC; --ink-dim:#B7BAC2; --bg:#12161B; --panel:#1A2028; --panel-2:#20272F; --line:#333B45;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Inter, system-ui, -apple-system, sans-serif;
+    line-height:1.5;
+  }
+  .display{font-family:Anton, Impact, sans-serif; font-weight:400; letter-spacing:0.01em;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  a{color:inherit;}
+
+  header.top{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 0; border-bottom:1px solid var(--line);
+  }
+  .wordmark{display:flex; align-items:baseline; gap:8px;}
+  .wordmark .brand{font-size:1.15rem; font-weight:700;}
+  .wordmark .brand .a{color:var(--accent);}
+  .handle{font-size:0.85rem; color:var(--ink-dim);}
+  .ig-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--accent); color:#fff; text-decoration:none;
+    padding:10px 18px; border-radius:var(--radius); font-weight:600; font-size:0.9rem;
+    white-space:nowrap;
+  }
+
+  .hero{padding:64px 0 40px; border-bottom:1px solid var(--line);}
+  .hero h1{
+    font-size:clamp(2.4rem, 7vw, 4.6rem); margin:0 0 20px; line-height:0.98; max-width:14ch;
+  }
+  .hero p{max-width:52ch; color:var(--ink-dim); font-size:1.05rem; margin:0 0 28px;}
+  .hero .disclosure{font-size:0.8rem; color:var(--ink-dim); border-left:2px solid var(--accent); padding-left:12px; max-width:56ch;}
+
+  nav.filters{
+    display:flex; gap:10px; flex-wrap:wrap; padding:28px 0; border-bottom:1px solid var(--line);
+  }
+  .pill{
+    border:1px solid var(--line); background:transparent; color:var(--ink);
+    padding:8px 16px; border-radius:999px; font-size:0.85rem; font-family:inherit; cursor:pointer;
+  }
+  .pill[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff;}
+
+  .grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; padding:36px 0 20px;
+  }
+  @media (max-width:820px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  .card .swatch{
+    height:120px; background:var(--panel-2); position:relative;
+    display:flex; align-items:flex-end; padding:12px;
+  }
+  .card .swatch .tag{
+    font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;
+    color:var(--accent); background:var(--accent-ink); padding:4px 8px; border-radius:2px;
+  }
+  .card .body{padding:16px 18px 20px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .card h3{font-size:1.05rem; margin:0;}
+  .card p{font-size:0.9rem; color:var(--ink-dim); margin:0; flex:1;}
+  .card .price{font-size:0.85rem; color:var(--ink-dim);}
+  .card .shop{
+    margin-top:6px; text-align:center; text-decoration:none; font-weight:600; font-size:0.9rem;
+    border:1px solid var(--accent); color:var(--accent); padding:10px; border-radius:var(--radius);
+  }
+  .card .shop:hover{background:var(--accent); color:#fff;}
+
+  footer{border-top:1px solid var(--line); margin-top:48px; padding:32px 0 40px; color:var(--ink-dim); font-size:0.85rem;}
+  footer .row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; align-items:center;}
+  footer a.ig{color:var(--ink); font-weight:600; text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="wordmark">
+      <span class="brand display">ATHLETIC <span class="a">AESTHETIX</span></span>
+    </div>
+    <a class="ig-btn" href="https://instagram.com/atheltic_aesthetix" target="_blank" rel="noopener">@atheltic_aesthetix on IG</a>
+  </header>
+
+  <section class="hero">
+    <h1 class="display">GEAR WE ACTUALLY WEAR</h1>
+    <p>The kit, accessories and recovery gear from our Instagram posts — all in one place, with links straight to the Amazon listing.</p>
+    <p class="disclosure">As an Amazon Associate, atheltic_aesthetix earns from qualifying purchases. Prices and availability shown on Amazon at the time of purchase.</p>
+  </section>
+
+  <nav class="filters" id="filters"></nav>
+
+  <section class="grid" id="grid"></section>
+
+  <footer>
+    <div class="row">
+      <span>© 2026 atheltic_aesthetix. All product links go to amazon.com.au.</span>
+      <a class="ig" href="https://instagram.com/atheltic_aesthetix" target="_blank" rel="noopener">Follow on Instagram →</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ---------------------------------------------------------------
+   PRODUCTS
+   Add a new item any time by copying an object below and editing
+   it — no other code needs to change. Fields:
+     name        product title
+     category    used for the filter pills above
+     desc        1–2 sentence description
+     price       display text, e.g. "From $39 AUD"
+     link        your Amazon Associates link (include your ?tag=)
+   -------------------------------------------------------------- */
+const PRODUCTS = [
+  {
+    name: "Fabric Resistance Bands (Set of 5)",
+    category: "Training",
+    desc: "The set we use for warm-ups and glute activation before every leg session — light to heavy resistance in one pack.",
+    price: "From $29 AUD",
+    link: "https://www.amazon.com.au/s?k=fabric+resistance+bands&tag=atheltic-aesthetix-22"
+  },
+  {
+    name: "High-Density Foam Roller",
+    category: "Recovery",
+    desc: "Our go-to for post-run recovery. Firm enough to get into tight calves and quads without wrecking your evening.",
+    price: "From $35 AUD",
+    link: "https://www.amazon.com.au/s?k=high+density+foam+roller&tag=atheltic-aesthetix-22"
+  },
+  {
+    name: "Running Cap, UV Protection",
+    category: "Running",
+    desc: "Lightweight, quick-dry and it actually stays on past 10km. Seen in most of our sunrise run posts.",
+    price: "From $22 AUD",
+    link: "https://www.amazon.com.au/s?k=running+cap+uv+protection&tag=atheltic-aesthetix-22"
+  },
+  {
+    name: "Gym Duffel with Shoe Compartment",
+    category: "Accessories",
+    desc: "Fits a full kit change plus trainers in the bottom pocket, so sweaty shoes stay away from everything else.",
+    price: "From $59 AUD",
+    link: "https://www.amazon.com.au/s?k=gym+duffel+shoe+compartment&tag=atheltic-aesthetix-22"
+  },
+  {
+    name: "Squat-Proof Compression Leggings",
+    category: "Training",
+    desc: "The leggings from our lifting reels — non-see-through under load, with a phone pocket that actually holds a phone.",
+    price: "From $45 AUD",
+    link: "https://www.amazon.com.au/s?k=squat+proof+compression+leggings&tag=atheltic-aesthetix-22"
+  },
+  {
+    name: "Wireless Sport Earbuds, IPX7",
+    category: "Accessories",
+    desc: "Sweat-proof, no dropouts mid-set, and the ear hooks mean they don't fall out on box jumps.",
+    price: "From $49 AUD",
+    link: "https://www.amazon.com.au/s?k=wireless+sport+earbuds+ipx7&tag=atheltic-aesthetix-22"
+  }
+];
+
+const grid = document.getElementById('grid');
+const filters = document.getElementById('filters');
+const categories = ["All", ...new Set(PRODUCTS.map(p => p.category))];
+let active = "All";
+
+function render(){
+  filters.innerHTML = "";
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'pill';
+    btn.textContent = cat;
+    btn.setAttribute('aria-pressed', cat === active);
+    btn.addEventListener('click', () => { active = cat; render(); });
+    filters.appendChild(btn);
+  });
+
+  grid.innerHTML = "";
+  PRODUCTS.filter(p => active === "All" || p.category === active).forEach(p => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="swatch"><span class="tag">${p.category}</span></div>
+      <div class="body">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <span class="price">${p.price}</span>
+        <a class="shop" href="${p.link}" target="_blank" rel="noopener sponsored">Shop on Amazon</a>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+render();
+</script>
+</body>
+</html>
