@@ -90,14 +90,16 @@
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
     display:flex; flex-direction:column; overflow:hidden;
   }
-  .card .swatch{
-    height:120px; background:var(--panel-2); position:relative;
-    display:flex; align-items:flex-end; padding:12px;
-  }
-  .card .swatch .tag{
-    font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;
-    color:var(--accent); background:var(--accent-ink); padding:4px 8px; border-radius:2px;
-  }
+ .card .swatch{
+  height:180px; background:var(--panel-2); position:relative;
+  display:flex; align-items:flex-end; padding:12px;
+}
+.card .swatch img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+.card .swatch .tag{
+  position:relative;
+  font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;
+  color:var(--accent); background:var(--accent-ink); padding:4px 8px; border-radius:2px;
+}
   .card .body{padding:16px 18px 20px; display:flex; flex-direction:column; gap:10px; flex:1;}
   .card h3{font-size:1.05rem; margin:0;}
   .card p{font-size:0.9rem; color:var(--ink-dim); margin:0; flex:1;}
@@ -120,12 +122,12 @@
     <div class="wordmark">
       <span class="brand display">ATHLETIC <span class="a">AESTHETIX</span></span>
     </div>
-    <a class="ig-btn" href="https://instagram.com/atheltic_aesthetix" target="_blank" rel="noopener">@atheltic_aesthetix on IG</a>
+    <a class="ig-btn" href="https://www.instagram.com/athletic_aesthetix/" target="_blank" rel="noopener">@atheltic_aesthetix on IG</a>
   </header>
 
   <section class="hero">
     <h1 class="display">GEAR WE ACTUALLY WEAR</h1>
-    <p>The kit, accessories and recovery gear from our Instagram posts — all in one place, with links straight to the Amazon listing.</p>
+    <p>The kit, accessories and specialized gear from our Instagram posts — all in one place, with links straight to the Amazon listing.</p>
     <p class="disclosure">As an Amazon Associate, atheltic_aesthetix earns from qualifying purchases. Prices and availability shown on Amazon at the time of purchase.</p>
   </section>
 
@@ -136,7 +138,7 @@
   <footer>
     <div class="row">
       <span>© 2026 atheltic_aesthetix. All product links go to amazon.com.au.</span>
-      <a class="ig" href="https://instagram.com/atheltic_aesthetix" target="_blank" rel="noopener">Follow on Instagram →</a>
+      <a class="ig" href="https://www.instagram.com/athletic_aesthetix/" target="_blank" rel="noopener">Follow on Instagram →</a>
     </div>
   </footer>
 </div>
@@ -154,10 +156,11 @@
    -------------------------------------------------------------- */
 const PRODUCTS = [
   {
-    name: "Men's quick-dry multi-purpose t-shirts",
+    name: "Men's quick-dry multi-purpose shirts 3-pack",
     category: "Training",
     desc: 'Engineered with hydrophobic fibers and capillary action to instantly wick sweat and maximize evaporation. Zero residue. Total comfort',
     price: "$42.99 AUD+ free delivery",
+    image: "3pack quick dry running shirt.jpg",
     link: "https://link.amazon/B0fpjSGCe"
   },
   {
@@ -166,6 +169,7 @@ const PRODUCTS = [
   category: "Running",
   desc: "Lightweight, quick-dry and it actually stays on past 10km. Seen in most of our sunrise run posts.",
   price: "$15 AUD + free delivery",
+  image: "quick-dry cap.jpg",
   link: "https://link.amazon/B06gy3H5a"
 
   },
@@ -174,6 +178,7 @@ const PRODUCTS = [
     category: "Training",
     desc: "Maximized sweat evaporation and UV protection. Perfect for outdoor athletes.",
     price: "$29.98 AUD + free delivery",
+    image: "long-sleeve.jpg",
     link: "https://link.amazon/B0iGvjRbl"
   },
   {
@@ -181,6 +186,7 @@ const PRODUCTS = [
     category: "Accessories",
     desc: "Fits a full kit change plus trainers in the bottom pocket, so sweaty shoes stay away from everything else.",
     price: "$52 AUD+free delivery",
+    image: "duffle-bag.jpg",
     link: "https://link.amazon/B0gNgtFbU"
   },
   {
@@ -189,6 +195,7 @@ const PRODUCTS = [
   category: "Training",
   desc: "Loose, breathable shorts we wear for lifting and runs. Quick-dry fabric, a zip pocket for your keys, and no restriction on squats.",
   price: "From $29 AUD+free delivery",
+  image: "gym-shorts.jpg",
   link: "https://link.amazon/B05x7ByA8"
 
   },
@@ -198,6 +205,7 @@ const PRODUCTS = [
   category: "Training",
   desc: "Baggy-fit mesh shorts that work for basketball, the gym or just hanging out. Lightweight, breathable, and they come in loads of colours.",
   price: "From $33 AUD + free delivery",
+  image: "mesh-shorts.jpg",
   link: "https://link.amazon/B0ig90Ary"
 }
 ];
@@ -223,7 +231,10 @@ function render(){
     const card = document.createElement('article');
     card.className = 'card';
     card.innerHTML = `
-      <div class="swatch"><span class="tag">${p.category}</span></div>
+      <div class="swatch">
+  ${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy">` : ""}
+  <span class="tag">${p.category}</span>
+</div>
       <div class="body">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
